@@ -1,5 +1,57 @@
-<div class="calculator">
-  <div class="calculator__container">
-    
+<div class="calculator-theme-1" [ngClass]="{'theme-2': theme == '2', 'theme-3': theme == '3'}">
+  <div class="calculator-theme-1__container">
+    <div class="calculator-theme-1__container--title-container">
+      <span>Calculator</span>
+      <div class="theme-container">
+        <span>THEME</span>
+        <div class="theme-container__column">
+          <div class="theme-container__column--row">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </div>
+          <div class="theme-container__column--toggle-button">
+            <div (click)="setTheme('1')" class="column"></div>
+            <div (click)="setTheme('2')" class="column"></div>
+            <div (click)="setTheme('3')" class="column"></div>
+            <div class="button"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="calculator-theme-1__container--header">
+      <span>{{ historyData }}</span>
+      <input class="current" type="text" [formControl]="inputCtrl" placeholder="0">
+    </div>
+    <div class="calculator-theme-1__container--calculator">
+      <div class="row">
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 103}" (click)="addNumber('7')">7</div>
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 104}" (click)="addNumber('8')">8</div>
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 105}" (click)="addNumber('9')">9</div>
+        <div class="row__key-button row__key-del" [ngClass]="{'active': keyCode == 8}" (click)="back()">DEL</div>
+      </div>
+      <div class="row">
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 100}" (click)="addNumber('4')">4</div>
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 101}" (click)="addNumber('5')">5</div>
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 102}" (click)="addNumber('6')">6</div>
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 107}" (click)="addition()">+</div>
+      </div>
+      <div class="row">
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 97}" (click)="addNumber('1')">1</div>
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 98}" (click)="addNumber('2')">2</div>
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 99}" (click)="addNumber('3')">3</div>
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 109}" (click)="subtraction()">-</div>
+      </div>
+      <div class="row">
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 110}" (click)="addPercentage()">.</div>
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 96}" (click)="addNumber('0')">0</div>
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 111}" (click)="division()">/</div>
+        <div class="row__number-button" [ngClass]="{'active': keyCode == 106}" (click)="multiplication()">x</div>
+      </div>
+      <div class="row">
+        <div class="row__key-button row__key-reset" [ngClass]="{'active': keyCode == 46}" (click)="reset()">RESET</div>
+        <div class="row__enter-button" [ngClass]="{'active': keyCode == 13}" (click)="sum()">=</div>
+      </div>
+    </div>
   </div>
 </div>
