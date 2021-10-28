@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "calculator-7d8a8": {
+      "hosting": {
+        "Calculator": [
+          "calculator-7d8a8"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "calculator-7d8a8"
+  }
+}

@@ -107,6 +107,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Calculator:build:production",
+            "firebaseProject": "calculator-7d8a8",
+            "firebaseHostingSite": "calculator-7d8a8"
+          }
         }
       }
     }
